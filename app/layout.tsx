@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './fonts.css';
 export const metadata: Metadata = { title: 'Tharaka Jayarathne | Database, ERP & Development', description: 'Computer Science graduate building reliable data systems, practical web applications, and machine learning experiments. Explore the work of Tharaka Jayarathne.', metadataBase: new URL('https://portfolio-tharaka-gamma.vercel.app'), alternates: {canonical: '/'}, icons: {icon: '/icon.svg'}, twitter: {card: 'summary_large_image', title: 'Tharaka Jayarathne — Portfolio', description: 'Database & ERP support, practical applications, and machine learning research.', images: ['/images/tharaka-graduation.jpg']}, openGraph: { title: 'Tharaka Jayarathne — Portfolio', description: 'Good systems start with good data.', type: 'website', url: '/', images: [{url: '/images/tharaka-graduation.jpg', width:1365, height:2048, alt:'Tharaka Jayarathne — Computer Science graduate'}] }, robots: { index: true, follow: true } };
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) { return <html lang="en"><body>{children}</body></html>; }

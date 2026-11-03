@@ -93,3 +93,35 @@ body{padding-top:var(--nav-height)}
  .hero-letter.is-typing:after{opacity:1;animation:hero-caret-blink .7s step-end infinite}
  .hero-keyword.is-untyped-word:after{visibility:hidden}
 }
+
+/* Clearer typography and a featured project with a larger gallery. */
+body{font-family:'Inter',Arial,sans-serif;font-size:17px}
+h1,h2,h3,.brand,.hero-intro,.hero-highlights strong,.expertise-strip p{font-family:'Manrope','Inter',Arial,sans-serif}
+.serif{font-family:Georgia,'Times New Roman',serif}
+.hero-description,.project-summary,.about-copy>p,.experience-row p{font-size:17px;line-height:1.8}
+.hero h1{font-size:clamp(42px,4.5vw,68px);letter-spacing:-2.8px;line-height:1.15}
+h2{font-weight:500;line-height:1.22}.project-card h3{font-weight:600;font-size:27px;letter-spacing:-.8px}
+.project-card{padding:20px;border-radius:18px;background:linear-gradient(145deg,#1c281f,#172019);border-color:#3d5240;box-shadow:0 8px 28px #00000012;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.project-copy{display:flex;flex:1;flex-direction:column;min-width:0}
+.project-copy .project-details-link{margin-top:auto;padding-top:17px;min-height:48px;display:flex;justify-content:space-between;align-items:center}
+.project-art{border-radius:11px}.project-meta{margin-top:23px}.project-subtitle{font-size:17px;line-height:1.65}
+.project-featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(26px,3vw,50px);padding:25px;align-items:center;border-color:#658157;background:linear-gradient(115deg,#223226,#18221b)}
+.project-featured .project-art:has(.slideshow){height:clamp(370px,34vw,510px)}
+.project-featured .project-copy{padding:10px 10px 10px 0;align-self:stretch;justify-content:center}
+.featured-label{font:11px/1.5 'Inter',sans-serif;font-weight:600;letter-spacing:1.8px;color:var(--mint);display:flex;align-items:center;gap:9px;margin-bottom:13px}
+.featured-label>span{width:6px;height:6px;flex-shrink:0;background:var(--mint);border-radius:50%;box-shadow:0 0 12px #c1f5b050}
+.project-featured .project-meta{margin-top:0}.project-featured h3{font-size:clamp(34px,3vw,47px);margin-block:13px 8px;line-height:1.15;letter-spacing:-1.5px}
+.project-featured .project-subtitle{color:#e5efdf;font-size:18px;margin-bottom:14px}.project-featured .tags{margin-top:4px}.project-featured .project-details-link{margin-top:22px}
+.project-ai,.project-ai:only-child{grid-column:auto;display:flex;gap:0}
+.project-ai .project-art{height:clamp(300px,24vw,420px);min-height:0;grid-row:auto}
+.project-ai .project-meta{margin-top:23px}.project-ai .tags{margin-top:auto}
+.slideshow .slideshow-image{transition:transform .6s cubic-bezier(.2,.65,.3,1)}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .project-card:hover{transform:translateY(-5px);border-color:#91b77b;box-shadow:0 20px 50px #0003,0 0 0 1px #c1f5b012}
+ .project-card:hover .slideshow-image{transform:scale(1.025)}
+ .project-card:focus-within{border-color:#a6cf90;box-shadow:0 0 0 1px #c1f5b025}
+ .project-details-link svg{transition:transform .25s}.project-details-link:hover svg{transform:translate(3px,-3px)}
+}
+@media(max-width:1000px){.project-featured{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:25px;padding:20px}.project-featured .project-art:has(.slideshow){height:420px}.project-featured .project-copy{padding:4px 0}.project-featured .project-summary{font-size:16px}}
+@media(max-width:800px){.project-featured{display:flex;gap:0}.project-featured .project-art:has(.slideshow){height:360px}.project-featured .project-copy{padding:22px 3px 3px}.project-featured h3{font-size:36px}.project-featured .project-summary{font-size:17px}.project-ai .project-art{height:260px}.hero h1{font-size:clamp(39px,7.5vw,60px);letter-spacing:-2px}}
+@media(max-width:560px){body{font-size:17px}.project-card{padding:14px;border-radius:14px}.project-copy{padding-inline:3px}.project-featured .project-art:has(.slideshow){height:285px}.project-featured .project-copy{padding:22px 3px 5px}.project-card h3{font-size:27px}.project-featured h3{font-size:35px}.project-subtitle,.project-summary,.about-copy>p,.experience-row p{font-size:17px}.project-ai .project-art{height:270px}.hero h1{font-size:clamp(35px,9.2vw,50px);letter-spacing:-1.8px}.hero-intro{font-size:21px}.hero-description{font-size:17px}.featured-label{font-size:10px;letter-spacing:1.5px}}
