@@ -56,3 +56,24 @@ body{padding-top:var(--nav-height)}
 @media(max-width:1100px){:root{--page-gutter:28px}.hero{gap:30px}.portrait-frame{height:460px}.project-art:has(.slideshow){height:300px}}
 @media(max-width:800px){:root{--page-gutter:20px;--nav-height:78px}.hero{gap:22px}.portrait-stage{max-width:540px}.portrait-frame{height:450px}.project-art:has(.slideshow){height:260px}.header{position:fixed}.header .nav{max-height:calc(100dvh - var(--nav-height));overflow-y:auto}}
 @media(max-width:560px){:root{--page-gutter:18px}.header{position:fixed}.header .nav{top:calc(var(--nav-height) - 1px);left:0;right:0;padding-inline:var(--page-gutter);border-bottom:1px solid #58724d;box-shadow:0 16px 24px #0004}.hero{gap:19px}.portrait-stage{max-width:390px}.portrait-frame{height:390px}.project-art:has(.slideshow){height:270px}}
+/* Focused hero typography animation: content stays readable throughout. */
+.hero-heading-line{display:inline-block;max-width:100%;vertical-align:top}.hero-keyword{position:relative;display:inline-block;isolation:isolate}.hero-keyword:after{content:'';position:absolute;left:2%;right:2%;bottom:-.08em;height:.045em;min-height:2px;border-radius:50%;background:linear-gradient(90deg,#a9df95,#d6ffc5,#99cd83);opacity:.8;transform-origin:left center;pointer-events:none}.hero-name{position:relative;display:inline-block;isolation:isolate}.hero-name:after{content:'';position:absolute;left:-.04em;right:-.04em;bottom:.08em;height:.35em;background:#c1f5b024;border-radius:2px;z-index:-1;transform-origin:left center;pointer-events:none}.hero-role{display:flex;align-items:center;gap:10px}.hero-role:before{content:'';width:24px;height:1px;background:var(--mint);flex-shrink:0;transform-origin:left center}.hero-intro>.wave{display:inline-block}
+@media(prefers-reduced-motion:no-preference){
+ @keyframes hero-line-rise{from{opacity:.8;transform:translateY(17px)}to{opacity:1;transform:translateY(0)}}
+ @keyframes hero-copy-rise{from{opacity:.85;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+ @keyframes hero-draw-line{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+ @keyframes hero-name-highlight{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+ @keyframes hero-arrow-greet{0%{transform:translate(0,0)}45%{transform:translate(4px,-4px)}100%{transform:translate(0,0)}}
+ .hero-content>.hero-heading{animation:none}
+ .hero-heading-line{animation:hero-line-rise .8s cubic-bezier(.18,.7,.25,1) .08s both}
+ .hero-heading-line:last-child{animation-delay:.24s}
+ .hero-keyword:after{animation:hero-draw-line .9s cubic-bezier(.2,.7,.25,1) .48s both}
+ .hero-content>.hero-intro{animation:hero-copy-rise .65s cubic-bezier(.2,.7,.25,1) both;animation-delay:.34s!important}
+ .hero-name:after{animation:hero-name-highlight .75s cubic-bezier(.2,.7,.25,1) .66s both}
+ .hero-intro>.wave{animation:hero-arrow-greet .85s ease-in-out .78s both}
+ .hero-content>.hero-role{animation:hero-copy-rise .65s cubic-bezier(.2,.7,.25,1) .43s both}
+ .hero-role:before{animation:hero-draw-line .6s ease-out .7s both}
+ .hero-content>.hero-description{animation:hero-copy-rise .7s cubic-bezier(.2,.7,.25,1) .52s both}
+}
+@media(max-width:560px){.hero-keyword:after{height:2px;bottom:-.1em}.hero-role{gap:8px}.hero-role:before{width:18px}}
+@media(prefers-reduced-motion:reduce){.hero-heading-line,.hero-keyword:after,.hero-name:after,.hero-role:before,.hero-intro>.wave{animation:none!important;transform:none!important;opacity:1}}
