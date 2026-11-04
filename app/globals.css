@@ -134,3 +134,33 @@ h2{font-weight:500;line-height:1.22}.project-card h3{font-weight:600;font-size:2
 .projects-grid>.project-ai .project-copy{padding:8px 4px}.projects-grid>.project-ai .project-meta{margin-top:0}.projects-grid>.project-ai h3{font-size:clamp(27px,2.8vw,39px);line-height:1.25;margin-block:13px}.projects-grid>.project-ai .tags{margin-top:5px}.projects-grid>.project-ai .project-details-link{margin-top:24px}
 @media(max-width:800px){.projects-grid>.project-ai,.projects-grid>.project-ai:only-child{grid-template-columns:1fr;gap:22px;margin-top:12px;padding:20px}.research-heading{align-items:start;flex-direction:column;gap:8px;padding-bottom:18px}.projects-grid>.project-ai .project-art{height:280px;min-height:0}.projects-grid>.project-ai .project-copy{padding:0}}
 @media(max-width:560px){.projects-grid>.project-ai,.projects-grid>.project-ai:only-child{padding:16px;gap:20px}.research-heading>.eyebrow{font-size:11px}.research-heading>span:last-child{font-size:12px}.projects-grid>.project-ai .project-art{height:245px}.projects-grid>.project-ai h3{font-size:28px}}
+
+/* Research mobile fix: stack without implicit grid columns or aspect-ratio sizing. */
+@media (max-width: 800px) {
+ .projects-grid > article.project-ai,
+ .projects-grid > article.project-ai:only-child {
+  display:flex; flex-direction:column; align-items:stretch;
+  grid-template-columns:none; min-width:0;
+ }
+ .projects-grid > article.project-ai > * {
+  min-width:0; max-width:100%; box-sizing:border-box;
+ }
+ .projects-grid > article.project-ai .research-heading {
+  width:100%; flex:none;
+ }
+ .projects-grid > article.project-ai .project-art {
+  display:grid; width:100%; max-width:100%; min-width:0;
+  height:245px; min-height:0; aspect-ratio:auto;
+  flex:none; align-self:stretch; overflow:hidden;
+ }
+ .projects-grid > article.project-ai .project-copy {
+  width:100%; min-width:0; flex:none; overflow-wrap:anywhere;
+ }
+ .projects-grid > article.project-ai .ai-mock {
+  width:100%; min-width:0; padding:16px 12px;
+ }
+ .projects-grid > article.project-ai .ai-caption {
+  white-space:normal; overflow-wrap:anywhere; text-align:center;
+ }
+ .projects-grid > article.project-ai .tags { flex-wrap:wrap; }
+}
